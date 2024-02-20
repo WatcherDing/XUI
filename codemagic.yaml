@@ -10,9 +10,13 @@ workflows:
       - name: Print Java version
         script: |
           java -version
+      - name: Print Java version
+        script: |
+          free -h
       - name: Grant execute permissions to gradlew
         script: |
           chmod +x gradlew
+
       - name: Build Android
         script: |
           # Build your Android project
