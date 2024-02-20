@@ -20,6 +20,9 @@ workflows:
           echo "Java Version:"
           java -version
           echo ""
+      - name: Monitor CPU Usage
+        script: |
+          top -n 1 -b
       - name: Set Android SDK location
         script: | 
           echo "sdk.dir=$ANDROID_SDK_ROOT" > "$CM_BUILD_DIR/local.properties"
