@@ -26,9 +26,6 @@ workflows:
       - name: Print Java version
         script: |
           java -version
-      - name: Print Java version2
-        script: |
-          free -h
       - name: Grant execute permissions to gradlew
         script: |
           chmod +x gradlew
