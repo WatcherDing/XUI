@@ -4,6 +4,22 @@ workflows:
     max_build_duration: 120
     instance_type: mac_mini_m1
     scripts:
+      - name: View Machine Configuration
+        script: |
+          echo "Machine Configuration:"
+          echo "----------------------"
+          echo "CPU Info:"
+          sysctl -n machdep.cpu.brand_string
+          echo ""
+          echo "Memory Info:"
+          free -h
+          echo ""
+          echo "Disk Space:"
+          df -h
+          echo ""
+          echo "Java Version:"
+          java -version
+          echo ""
       - name: Set Android SDK location
         script: | 
           echo "sdk.dir=$ANDROID_SDK_ROOT" > "$CM_BUILD_DIR/local.properties"
